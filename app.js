@@ -17,11 +17,17 @@ DOMSelectors.form.addEventListener("submit", function(event){
     const firstName = DOMSelectors.firstName.value
     const lastName = DOMSelectors.lastName.value
     const student_class = DOMSelectors.class.value
-    DOMSelectors.firstNameoutput.innerText = firstName
+    DOMSelectors.firstNameoutput.innerHTML
     DOMSelectors.lastNameoutput.innerText = lastName
     DOMSelectors.classoutput.innerText = student_class
 
 
+
+});
+
+console.log(DOMSelectors.firstName);
+DOMSelectors.form.addEventListener("submit", function(event){
+    event.preventDefault();
 
 });
 
@@ -35,6 +41,14 @@ console.log(DOMSelectors.class);
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
 
+document
+    .querySelector(".gallery")
+    .insertAdjacentHTML(
+        "afterbegin",
+        '<div class="card"><h2 class="card-header">${}</h2></div>
+    )
 });
+
+
 
 
