@@ -5,9 +5,11 @@ const DOMSelectors= {
     firstName: document.querySelector("#firstName"),
     lastName: document.querySelector("#lastName"),
     class: document.querySelector("#class"),
+    pic: document.querySelector("#pic"),
     firstNameoutput: document.querySelector("#firstNameoutput"),
     lastNameoutput: document.querySelector("#lastNameoutput"),
     classoutput: document.querySelector("#classoutput"),
+    picoutput: document.querySelector("#picoutput"),
     //select the text box
     //select all the h2 in one property
 };
@@ -17,38 +19,10 @@ DOMSelectors.form.addEventListener("submit", function(event){
     const firstName = DOMSelectors.firstName.value
     const lastName = DOMSelectors.lastName.value
     const student_class = DOMSelectors.class.value
-    DOMSelectors.firstNameoutput.innerHTML
+    const pic= DOMSelectors.pic.value
+    DOMSelectors.firstNameoutput.innerTexts = firstName
     DOMSelectors.lastNameoutput.innerText = lastName
     DOMSelectors.classoutput.innerText = student_class
-
-
-
-});
-
-console.log(DOMSelectors.firstName);
-DOMSelectors.form.addEventListener("submit", function(event){
-    event.preventDefault();
+    document.getElementById("picoutput").src = pic
 
 });
-
-console.log(DOMSelectors.lastName);
-DOMSelectors.form.addEventListener("submit", function(event){
-    event.preventDefault();
-
-});
-
-console.log(DOMSelectors.class);
-DOMSelectors.form.addEventListener("submit", function(event){
-    event.preventDefault();
-
-document
-    .querySelector(".gallery")
-    .insertAdjacentHTML(
-        "afterbegin",
-        '<div class="card"><h2 class="card-header">${}</h2></div>
-    )
-});
-
-
-
-

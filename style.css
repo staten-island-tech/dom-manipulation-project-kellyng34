@@ -3,10 +3,6 @@ body
     background-color: rgb(183, 239, 247);
     font-size: 170%;
     text-align: center;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
     font-style: italic;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
