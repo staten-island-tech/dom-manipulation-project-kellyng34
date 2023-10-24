@@ -26,3 +26,6 @@ DOMSelectors.form.addEventListener("submit", function(event){
     document.getElementById("picoutput").src = pic
 
 });
+function clearcontext(DOMSelectors){
+    DOMSelectors.box.interHMTL = ;
+}
