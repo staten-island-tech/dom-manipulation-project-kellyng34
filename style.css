@@ -7,3 +7,9 @@ body
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
 }
+
+.button {
+
+    border-radius: 40%
+    border: 5px solid rgb(214, 100, 237);
+}

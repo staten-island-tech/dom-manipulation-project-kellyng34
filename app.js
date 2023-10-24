@@ -27,5 +27,5 @@ DOMSelectors.form.addEventListener("submit", function(event){
 
 });
 function clearcontext(DOMSelectors){
-    DOMSelectors.box.interHMTL = ;
+    DOMSelectors.box.interHMTL = "";
 }
