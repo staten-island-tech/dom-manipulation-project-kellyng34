@@ -3,6 +3,7 @@ body
     background-color: rgb(183, 239, 247);
     font-size: 170%;
     text-align: center;
+    align-items: center;
     font-style: italic;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
@@ -10,6 +11,5 @@ body
 
 .button {
 
-    border-radius: 40%
-    border: 5px solid rgb(214, 100, 237);
+    align-items: center;
 }
