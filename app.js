@@ -1,6 +1,6 @@
 
 
-const DOMSelectors= {
+const DOMSelectors = {
     form: document.querySelector("#form"),
     firstName: document.querySelector("#firstName"),
     lastName: document.querySelector("#lastName"),
@@ -14,26 +14,31 @@ const DOMSelectors= {
     button: document.querySelector("#button")
 };
 /* console.log(DOMSelectors.firstName); */
-function create(){
+function create() {
 
-    const Profile
-    const firstName = DOMSelectors.firstName.value
-    const lastName = DOMSelectors.lastName.value
-    const student_class = DOMSelectors.class.value
-    const pic= DOMSelectors.pic.value
-    return {}
+    const Profile = {
+        firstName: DOMSelectors.firstName.value,
+        lastName: DOMSelectors.firstName.value,
+        class: DOMSelectors.class.value,
+        pic: DOMSelectors.pic.value
+    }
+    return Profile
 };
-    function divCreater(){
+function divCreater() {
     form.insertAdjacentHMTL(
         "afterend",
-        "<div id=box><p id=firstNameoutput></p><p id=lastNameoutput></p><img id=picoutput></img</div><button id=button>Clear Profile</button"
+        `<div id=box><p id=firstNameoutput>${firstName}</p><p id=lastNameoutput>${lastName}</p><img id=picoutput>${pic}</img</div><button id="btn">Clear Profile</button>`
     );
 
+}
 
-    DOMSelectors.firstNameoutput.innerTexts = firstName
-    DOMSelectors.lastNameoutput.innerText = lastName
-    DOMSelectors.classoutput.innerText = student_class
+divCreater();
+function output(firstName, lastName, pic) {
+    document.getElementById("firstNameoutput").innerText = firstName
+    document.getElementById("lastNameoutput").innerText = lastName
     document.getElementById("picoutput").src = pic
+}
+output(Profile.firstName, Profile.lastName, Profile.pic)
 
-}; 
+};
 
