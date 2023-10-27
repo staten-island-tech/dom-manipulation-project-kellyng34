@@ -13,8 +13,9 @@ const DOMSelectors = {
     box: document.querySelector("#box"),
     button: document.querySelector("#button"),
 };
-/* console.log(DOMSelectors.firstName); */
 
+/* console.log(DOMSelectors.firstName); */
+let count=0;
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
     const firstName = DOMSelectors.firstName.value
@@ -22,17 +23,17 @@ DOMSelectors.form.addEventListener("submit", function(event){
     const student_class = DOMSelectors.class.value
     const pic = DOMSelectors.pic.value
     function divCreater(){
-        card.insertAdjacentHTML(
+        DOMSelectors.container.insertAdjacentHTML(
         "afterend",
         `<div id=box><p id=firstNameoutput>${firstName}</p><p id=lastNameoutput>${lastName}</p><p id=classoutput>${student_class}</p><img id=picoutput>${pic}</img</div><button id="button">Clear Profile</button>`
         );
-
     }});
 
     divCreater();
 function output(firstName, lastName, pic) {
     document.getElementById("firstNameoutput").innerText = firstName
     document.getElementById("lastNameoutput").innerText = lastName
+    document.getElementById("classoutput").innerText = student_class
     document.getElementById("picoutput").src = pic
 }
 output(Profile.firstName, Profile.lastName, Profile.pic)
@@ -41,7 +42,7 @@ output(Profile.firstName, Profile.lastName, Profile.pic)
 function remove(){
     let btns = document.querySelectorAll("button");
      btns.forEach((button)=> 
-        button.addEventListener("click",function(event) {
+        button.addEventListener("click",function(event){
       })
     );
 }
