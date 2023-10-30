@@ -26,23 +26,24 @@ DOMSelectors.form.addEventListener("submit", function(event){
         DOMSelectors.container.insertAdjacentHTML(
         "afterend",
         `<div id=box><p id=firstNameoutput>${firstName}</p><p id=lastNameoutput>${lastName}</p><p id=classoutput>${student_class}</p><img id=picoutput>${pic}</img</div><button id="button">Clear Profile</button>`
-        );
-    }});
+        )};
+        divCreater()
+       
+    });
 
-    divCreater();
+   
 function output(firstName, lastName, pic) {
     document.getElementById("firstNameoutput").innerText = firstName
     document.getElementById("lastNameoutput").innerText = lastName
     document.getElementById("classoutput").innerText = student_class
     document.getElementById("picoutput").src = pic
 }
-output(Profile.firstName, Profile.lastName, Profile.pic)
 
 
 function remove(){
     let btns = document.querySelectorAll("button");
      btns.forEach((button)=> 
-        button.addEventListener("click",function(event){
+        button.addEventListener("click",function(remove){
       })
     );
 }
