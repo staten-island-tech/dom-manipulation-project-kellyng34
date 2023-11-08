@@ -4,14 +4,14 @@ const DOMSelectors = {
     form: document.querySelector("#form"),
     firstName: document.querySelector(".firstName"),
     lastName: document.querySelector(".lastName"),
-    .pic: document.querySelector(".pic"),
-    box: document.querySelector(".box"),
+    pic: document.querySelector(".pic"),
+    container: document.querySelector(".container"),
     button: document.querySelector(".button"),
 };
 
 /* console.log(DOMSelectors.firstName); */
 
-function divCreater(){
+function divCreator(){
     DOMSelectors.container.insertAdjacentHTML(
     "afterbegin",
     `<div class="container"><div class="card">${firstName}<p>Animal</p><img scr="${pic}" alt=""class="cardimg">${lastName}<button class = "button">Remove</button></div>`
@@ -23,7 +23,15 @@ function insert(){
         const firstName = DOMSelectors.firstName.value
         const lastName = DOMSelectors.lastName.value
         const pic = DOMSelectors.pic.value
-        divCreater(firstName, lastName, pic)
+
+    function divCreator(){
+            DOMSelectors.container.insertAdjacentHTML(
+            "afterbegin",
+            `<div class="container"><div class="card">${firstName}<p>Animal</p><img scr="${pic}" alt=""class="cardimg">${lastName}<button class = "button">Remove</button></div>`
+            )};
+            divCreator();
+    
+
         const remove= document.querySelectorAll(".button");
         remove.forEach((button)=> {
             button.addEventListener("click", function(event){
@@ -42,6 +50,4 @@ function display(){
     document.getElementById("pic").src = pic
     display()
 }
-
-
 
