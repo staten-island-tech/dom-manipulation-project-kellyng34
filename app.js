@@ -2,52 +2,57 @@
 
 const DOMSelectors = {
     form: document.querySelector("#form"),
-    firstName: document.querySelector(".firstName"),
-    lastName: document.querySelector(".lastName"),
-    pic: document.querySelector(".pic"),
+    firstName: document.querySelector("#firstName"),
+    lastName: document.querySelector("#lastName"),
+    pic: document.querySelector("#pic"),
     container: document.querySelector(".container"),
-    button: document.querySelector(".button"),
 };
 
-/* console.log(DOMSelectors.firstName); */
 
-function divCreator(){
-    DOMSelectors.container.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="container"><div class="card">${firstName}<p>Animal</p><img scr="${pic}" alt=""class="cardimg">${lastName}<button class = "button">Remove</button></div>`
-    )};
+  DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-function insert(){
-    DOMSelectors.form.addEventListener("submit", function(event){
-        event.preventDefault();
-        const firstName = DOMSelectors.firstName.value
-        const lastName = DOMSelectors.lastName.value
-        const pic = DOMSelectors.pic.value
 
-    function divCreator(){
-            DOMSelectors.container.insertAdjacentHTML(
+    const food= {
+     firstName : DOMSelectors.firstName.value,
+     lastName : DOMSelectors.lastName.value,
+     pic : DOMSelectors.pic.value,
+
+
+    }
+    divCreator(food);
+    clear();
+    remove();
+  });
+
+    function divCreator(apple){
+        DOMSelectors.container.insertAdjacentHTML(
             "afterbegin",
-            `<div class="container"><div class="card">${firstName}<p>Animal</p><img scr="${pic}" alt=""class="cardimg">${lastName}<button class = "button">Remove</button></div>`
+            `<div class="card">
+                <h2 class= cardname>${apple.firstName}</h2>
+                <h2 class= cardname>${apple.lastName}</h2>
+                <h4>Your Food</h4>
+                <img src="${apple.pic}" alt="" class="cardimg">
+                <button class="button">Remove</button>
+            </div>`
             )};
-            divCreator();
-    
+     
 
-        const remove= document.querySelectorAll(".button");
-        remove.forEach((button)=> {
-            button.addEventListener("click", function(event){
-                const objectToRemove =  event.target.parentElemnt;
-                objectToRemove.remove();
-            });
-        });
-    })};
 
+  function clear(){
+          DOMSelectors.firstName.value = "";
+          DOMSelectors.lastName.value= "";
+          DOMSelectors.pic.value= "";
+  };
+
+
+
+
+function remove() {
+  document.querySelectorAll(".button").forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.target.parentElement.remove();
    
-
-
-function display(){
-    document.getElementById("firstName").innerText = firstName
-    document.getElementById("lastName").innerText = lastName
-    document.getElementById("pic").src = pic
-    display()
+    });
+  });
 }
-
